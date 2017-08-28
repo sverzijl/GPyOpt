@@ -25,7 +25,7 @@ class  CostModel(object):
         self.cost_type = cost_withGradients
         
         # --- Set-up evaluation cost
-        if self.cost_type == None:
+        if self.cost_type is None:
             self.cost_withGradients = constant_cost_withGradients
             self.cost_type = 'Constant cost'
                 

@@ -72,7 +72,7 @@ def plot_acquisition(bounds,input_dim,model,Xdata,Ydata,acquisition_function,sug
         plt.legend(loc='upper left')
 
 
-        if filename!=None:
+        if filename is not None:
             savefig(filename)
         else:
             plt.show()
@@ -113,7 +113,7 @@ def plot_acquisition(bounds,input_dim,model,Xdata,Ydata,acquisition_function,sug
         plt.ylabel('X2')
         plt.title('Acquisition function')
         plt.axis((bounds[0][0],bounds[0][1],bounds[1][0],bounds[1][1]))
-        if filename!=None:savefig(filename)
+        if filename is not None:savefig(filename)
 
 
 def plot_convergence(Xdata,best_Y, filename = None):
@@ -141,7 +141,7 @@ def plot_convergence(Xdata,best_Y, filename = None):
     plt.ylabel('Best y')
     grid(True)
 
-    if filename!=None:
+    if filename is not None:
         savefig(filename)
     else:
         plt.show()

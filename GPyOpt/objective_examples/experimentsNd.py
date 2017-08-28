@@ -13,14 +13,14 @@ class alpine1:
     '''
 
     def __init__(self,input_dim, bounds=None, sd=None):
-        if bounds == None: 
+        if bounds is None:
             self.bounds = bounds  =[(-10,10)]*input_dim
         else: 
             self.bounds = bounds
         self.min = [(0)]*input_dim
         self.fmin = 0
         self.input_dim = input_dim
-        if sd==None: 
+        if sd is None:
             self.sd = 0
         else: 
             self.sd=sd
@@ -44,14 +44,14 @@ class alpine2:
     :param sd: standard deviation, to generate noisy evaluations of the function.
     '''
     def __init__(self,input_dim, bounds=None, sd=None):
-        if bounds == None: 
+        if bounds is None:
             self.bounds = bounds  =[(1,10)]*input_dim
         else: 
             self.bounds = bounds
         self.min = [(7.917)]*input_dim
         self.fmin = -2.808**input_dim
         self.input_dim = input_dim
-        if sd==None: 
+        if sd is None:
             self.sd = 0
         else: 
             self.sd=sd
@@ -77,14 +77,14 @@ class gSobol:
         self.a = a
         self.input_dim = len(self.a)
 
-        if bounds == None: 
+        if bounds is None:
             self.bounds =[(-4,6)]*self.input_dim
         else: 
             self.bounds = bounds
 
         if not (self.a>0).all(): return 'Wrong vector of coefficients, they all should be positive'
         self.S_coef = (1/(3*((1+self.a)**2))) / (np.prod(1+1/(3*((1+self.a)**2)))-1)
-        if sd==None: self.sd = 0
+        if sd is None: self.sd = 0
         else: self.sd=sd
 
     def f(self,X):
@@ -107,7 +107,7 @@ class ackley:
     def __init__(self, input_dim, bounds=None,sd=None):
         self.input_dim = input_dim
 
-        if bounds == None: 
+        if bounds is None:
             self.bounds =[(-32.768,32.768)]*self.input_dim
         else: 
             self.bounds = bounds
@@ -115,7 +115,7 @@ class ackley:
         self.min = [(0.)*self.input_dim]
         self.fmin = 0
         
-        if sd==None: 
+        if sd is None:
             self.sd = 0
         else:
             self.sd=sd

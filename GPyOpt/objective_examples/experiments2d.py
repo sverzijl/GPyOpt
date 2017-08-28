@@ -54,11 +54,11 @@ class rosenbrock(function2d):
     '''
     def __init__(self,bounds=None,sd=None):
         self.input_dim = 2
-        if bounds == None: self.bounds = [(-0.5,3),(-1.5,2)]
+        if bounds is None: self.bounds = [(-0.5,3),(-1.5,2)]
         else: self.bounds = bounds
         self.min = [(0, 0)]
         self.fmin = 0
-        if sd==None: self.sd = 0
+        if sd is None: self.sd = 0
         else: self.sd=sd
         self.name = 'Rosenbrock'
 
@@ -85,11 +85,11 @@ class beale(function2d):
     '''
     def __init__(self,bounds=None,sd=None):
         self.input_dim = 2
-        if bounds == None: self.bounds = [(-1,1),(-1,1)]
+        if bounds is None: self.bounds = [(-1,1),(-1,1)]
         else: self.bounds = bounds
         self.min = [(0, 0)]
         self.fmin = 0
-        if sd==None: self.sd = 0
+        if sd is None: self.sd = 0
         else: self.sd=sd
         self.name = 'Beale'
 
@@ -116,11 +116,11 @@ class dropwave(function2d):
     '''
     def __init__(self,bounds=None,sd=None):
         self.input_dim = 2
-        if bounds == None: self.bounds = [(-1,1),(-1,1)]
+        if bounds is None: self.bounds = [(-1,1),(-1,1)]
         else: self.bounds = bounds
         self.min = [(0, 0)]
         self.fmin = 0
-        if sd==None: self.sd = 0
+        if sd is None: self.sd = 0
         else: self.sd=sd
         self.name = 'dropwave'
 
@@ -147,11 +147,11 @@ class cosines(function2d):
     '''
     def __init__(self,bounds=None,sd=None):
         self.input_dim = 2
-        if bounds == None: self.bounds = [(0,1),(0,1)]
+        if bounds is None: self.bounds = [(0,1),(0,1)]
         else: self.bounds = bounds
         self.min = [(0.31426205,  0.30249864)]
         self.fmin = -1.59622468
-        if sd==None: self.sd = 0
+        if sd is None: self.sd = 0
         else: self.sd=sd
         self.name = 'Cosines'
 
@@ -180,21 +180,21 @@ class branin(function2d):
     '''
     def __init__(self,bounds=None,a=None,b=None,c=None,r=None,s=None,t=None,sd=None):
         self.input_dim = 2
-        if bounds == None: self.bounds = [(-5,10),(1,15)]
+        if bounds is None: self.bounds = [(-5,10),(1,15)]
         else: self.bounds = bounds
-        if a==None: self.a = 1
+        if a is None: self.a = 1
         else: self.a = a           
-        if b==None: self.b = 5.1/(4*np.pi**2)
+        if b is None: self.b = 5.1/(4*np.pi**2)
         else: self.b = b
-        if c==None: self.c = 5/np.pi
+        if c is None: self.c = 5/np.pi
         else: self.c = c
-        if r==None: self.r = 6
+        if r is None: self.r = 6
         else: self.r = r
-        if s==None: self.s = 10 
+        if s is None: self.s = 10
         else: self.s = s
-        if t==None: self.t = 1/(8*np.pi)
+        if t is None: self.t = 1/(8*np.pi)
         else: self.t = t    
-        if sd==None: self.sd = 0
+        if sd is None: self.sd = 0
         else: self.sd=sd
         self.min = [(-np.pi,12.275),(np.pi,2.275),(9.42478,2.475)] 
         self.fmin = 0.397887
@@ -225,11 +225,11 @@ class goldstein(function2d):
     '''
     def __init__(self,bounds=None,sd=None):
         self.input_dim = 2
-        if bounds == None: self.bounds = [(-2,2),(-2,2)]
+        if bounds is None: self.bounds = [(-2,2),(-2,2)]
         else: self.bounds = bounds
         self.min = [(0,-1)]
         self.fmin = 3
-        if sd==None: self.sd = 0
+        if sd is None: self.sd = 0
         else: self.sd=sd
         self.name = 'Goldstein'
 
@@ -265,11 +265,11 @@ class sixhumpcamel(function2d):
     '''
     def __init__(self,bounds=None,sd=None):
         self.input_dim = 2
-        if bounds == None: self.bounds = [(-2,2),(-1,1)]
+        if bounds is None: self.bounds = [(-2,2),(-1,1)]
         else: self.bounds = bounds
         self.min = [(0.0898,-0.7126),(-0.0898,0.7126)]
         self.fmin = -1.0316
-        if sd==None: self.sd = 0
+        if sd is None: self.sd = 0
         else: self.sd=sd
         self.name = 'Six-hump camel'
 
@@ -302,11 +302,11 @@ class mccormick(function2d):
     '''
     def __init__(self,bounds=None,sd=None):
         self.input_dim = 2
-        if bounds == None: self.bounds = [(-1.5,4),(-3,4)]
+        if bounds is None: self.bounds = [(-1.5,4),(-3,4)]
         else: self.bounds = bounds
         self.min = [(-0.54719,-1.54719)]
         self.fmin = -1.9133
-        if sd==None: self.sd = 0
+        if sd is None: self.sd = 0
         else: self.sd=sd
         self.name = 'Mccormick'
 
@@ -339,11 +339,11 @@ class powers(function2d):
     '''
     def __init__(self,bounds=None,sd=None):
         self.input_dim = 2
-        if bounds == None: self.bounds = [(-1,1),(-1,1)]
+        if bounds is None: self.bounds = [(-1,1),(-1,1)]
         else: self.bounds = bounds
         self.min = [(0,0)]
         self.fmin = 0
-        if sd==None: self.sd = 0
+        if sd is None: self.sd = 0
         else: self.sd=sd
         self.name = 'Sum of Powers'
 
@@ -365,11 +365,11 @@ class powers(function2d):
 class eggholder:
     def __init__(self,bounds=None,sd=None):
         self.input_dim = 2
-        if bounds == None: self.bounds = [(-512,512),(-512,512)]
+        if bounds is None: self.bounds = [(-512,512),(-512,512)]
         else: self.bounds = bounds
         self.min = [(512,404.2319)]
         self.fmin = -959.6407
-        if sd==None: self.sd = 0
+        if sd is None: self.sd = 0
         else: self.sd=sd
         self.name = 'Egg-holder'
 

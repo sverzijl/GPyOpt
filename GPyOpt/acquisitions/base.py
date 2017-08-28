@@ -21,7 +21,7 @@ class AcquisitionBase(object):
         self.optimizer = optimizer
         self.analytical_gradient_acq = self.analytical_gradient_prediction and self.model.analytical_gradient_prediction # flag from the model to test if gradients are available
 
-        if cost_withGradients == None:
+        if cost_withGradients is None:
             self.cost_withGradients = constant_cost_withGradients
         else:
             self.cost_withGradients = cost_withGradients 

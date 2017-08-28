@@ -109,7 +109,7 @@ class Design_space(object):
         """
         Checks if the problem has constrains.
         """
-        return self.constraints != None
+        return self.constraints is not None
 
     def _expand_attributes(self, space):
         """
@@ -216,7 +216,7 @@ class Design_space(object):
         """
         x = np.atleast_2d(x)
         I_x = np.ones((x.shape[0],1))
-        if self.constraints != None:
+        if self.constraints is not None:
             for d in self.constraints:
                 try:
                     exec('constrain =  lambda x:' + d['constrain'],globals())
