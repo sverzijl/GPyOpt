@@ -67,13 +67,13 @@ class BO(object):
 
         # --- Setting up stop conditions
         self.eps = eps 
-        if  (max_iter == None) and (max_time == None):
+        if  (max_iter is None) and (max_time is None):
             self.max_iter = 0
             self.max_time = np.inf
-        elif (max_iter == None) and (max_time != None):
+        elif (max_iter is None) and (max_time is not None):
             self.max_iter = np.inf
             self.max_time = max_time
-        elif (max_iter != None) and (max_time == None):
+        elif (max_iter is not None) and (max_time is None):
             self.max_iter = max_iter
             self.max_time = np.inf     
         else:
@@ -125,11 +125,11 @@ class BO(object):
         self._compute_results()
 
         # --- Print the desired result in files
-        if self.report_file != None: 
+        if self.report_file is not None:
             self.save_report(self.report_file)
-        if self.evaluations_file != None: 
+        if self.evaluations_file is not None:
             self.save_evaluations(self.evaluations_file)
-        if self.models_file != None:  
+        if self.models_file is not None:
             self.save_models(self.models_file)
 
 
