@@ -84,7 +84,7 @@ class BayesianOptimization(BO):
         ## ***************************************************************************************************************************
 
         ## Bounds to space
-        if domain == None and bounds!=None:
+        if domain is None and bounds is not None:
             self.domain = bounds_to_space(bounds)
         else:
             self.domain = domain
@@ -156,7 +156,7 @@ class BayesianOptimization(BO):
         # --- CHOOSE design space
 
         if not hasattr(self,'domain'): ### XXXXXXXXXXXXXXXXXXXXXXXX NOTE: remove this line in next version to depreciate arguments
-            if domain == None and 'bounds' in self.kwargs:
+            if domain is None and 'bounds' in self.kwargs:
                 self.domain = bounds_to_space(kwargs['bounds'])
             else:
                 self.domain = domain
@@ -182,7 +182,7 @@ class BayesianOptimization(BO):
         self.initial_design_type  = initial_design_type
 
 
-        if initial_design_numdata==None:
+        if initial_design_numdata is None:
             self.initial_design_numdata = 5
         elif initial_design_numdata >0:
             self.initial_design_numdata = initial_design_numdata
@@ -334,7 +334,7 @@ class BayesianOptimization(BO):
                 self.acquisition_weight = 2  ## TODO: implement the optimal rate (only for bandits)
 
         # --- Choose the acquisition
-        if self.acquisition_type == None or self.acquisition_type =='EI':
+        if self.acquisition_type is None or self.acquisition_type =='EI':
             return AcquisitionEI(self.model, self.space, self.acquisition_optimizer, self.cost.cost_withGradients, self.acquisition_jitter)
 
         elif self.acquisition_type =='EI_MCMC':
@@ -381,7 +381,7 @@ class BayesianOptimization(BO):
         if self.batch_size == 1 or self.evaluator_type == 'sequential':
             return Sequential(self.acquisition)
 
-        elif self.batch_size >1 and (self.evaluator_type == 'random' or self.evaluator_type == None):
+        elif self.batch_size >1 and (self.evaluator_type == 'random' or self.evaluator_type is None):
             return RandomBatch(self.acquisition, self.batch_size)
 
         elif self.evaluator_type == 'predictive':
